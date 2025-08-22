@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Segoe UI;
+}
+header{
+    display: flex;
+    height: 3.7rem;
+    width: 100%;
+    /* align-items: center; */
+}
+.logo{
+    display: flex;
+    background: pink;
+    width: 82%;
+    align-items: center;
+    
+}
+.logo h3{
+    color: rgb(56, 26, 8);
+    font-size: 1.25rem;
+    margin-left: 5rem;
+
+}
+.menu{
+    display: flex;
+    background: burlywood;
+    width: 18%;
+    align-items: center;
+    justify-content: center;
+}
+.menu span{
+    font-weight: 400;
+    font-size: large;
+}
+.menu:hover{
+    background: rgb(56, 26, 8);
+    color: white;
+    transition-duration: 0.3s;
+}

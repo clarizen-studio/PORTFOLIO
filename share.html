@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Your Name</title>
+  <link rel="stylesheet" href="chatgpt.css">
+
+  <style>
+    :root {
+  --bg: #0b0f17;
+  --bg-soft: #0f1524;
+  --card: rgba(255, 255, 255, 0.06);
+  --text: #e8ecf1;
+  --muted: #9fb0c7;
+  --brand1: #7c3aed;
+  --brand2: #06b6d4;
+  --accent: #22d3ee;
+  --ring: #94a3b8;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+  --grid-gap: clamp(14px, 1.8vw, 22px);
+}
+
+[data-theme="light"] {
+  --bg: #f7f9fc;
+  --bg-soft: #ffffff;
+  --card: rgba(10, 12, 20, 0.06);
+  --text: #0b1220;
+  --muted: #475569;
+  --ring: #cbd5e1;
+  --shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  background: 
+    radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, 0.20), transparent 60%),
+    radial-gradient(1000px 500px at 110% 10%, rgba(6, 182, 212, 0.22), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg));
+  background-attachment: fixed;
+  line-height: 1.65;
+}
+
+/* Layout */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* ========================
+Header & Navigation 
+===========================*/
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(1.2) blur(10px);
+  background: linear-gradient(180deg, rgba(10, 10, 16, 0.8), rgba(10, 10, 16, 0.35));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] header {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55));
+}
+
+.container-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+    flex-wrap: wrap;
+}
+
+.logoline{
+    margin-top: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+/* !!!!!!!!!!!!!!!! CHECKLIST CONTAINER */
+.check-container{
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: var(--bg-soft);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+#checkbtn{
+  display: none;
+  background: transparent;
+  border: 1px solid var(--ring);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#checkbtn:hover {
+  border-color: var(--text);
+}
+
+
+/* Buttons */
+.kbtn {
+  appearance: none;
+  border: 1px solid var(--ring);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.kbtn:hover {
+  border-color: var(--text);
+}
+
+.btn {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--ring);
+  box-shadow: none;
+}
+
+/* ========================
+ HERO SECTION
+=========================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--grid-gap);
+  align-items: center;
+  padding: 58px 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.1;
+  margin: 14px 0 10px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.2vw, 1.05rem);
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+
+
+/* ==============================
+    About us
+================================= */
+#about{
+  background: var(--card);
+  border-radius: 15px;
+  padding: 4rem 2rem 2rem;
+}
+.heads-h{
+  font-size: 2.3rem;
+  display: inline;
+  border-bottom: 1px solid white;
+}
+.heads-ha{
+  font-family: verdana;
+  color: #7c3aed;
+  font-size: 7rem;
+  display: inline;
+  /* border-bottom: 1px solid white; */
+}
+.timeline {
+  position: relative;
+  margin-left: 6px;
+  padding-left: 22px;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--brand1), var(--brand2));
+}
+
+.item {
+  position: relative;
+  margin: 14px 0;
+  padding: 14px 14px 14px 18px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+}
+
+.item:before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  box-shadow: 0 0 0 4px rgba(124,58,237,.25);
+}
+/* =================
+MEMBERS
+=================== */
+    .containers{
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .members {
+      margin-top: 20px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.6s ease;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .members.show {
+      max-height: 500px; /* big enough to fit content */
+      opacity: 1;
+    }
+
+    .member{
+        background: #475569;
+        padding: 40px;
+        border-radius: 15px;
+    }
+
+/* Glass Card */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.avatar {
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 16px;
+  background: 
+    radial-gradient(400px 200px at 30% 10%, rgba(124, 58, 237, 0.35), transparent 60%),
+    radial-gradient(380px 190px at 80% 20%, rgba(6, 182, 212, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg-soft));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.avatar .ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.avatar svg {
+  width: 48%;
+  opacity: 0.9;
+}
+
+/* Sections */
+section {
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  margin: 0 0 18px;
+}
+
+p.lead {
+  color: var(--muted);
+}
+
+/* ========================
+CHIPS
+=========================== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--card);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ============================
+GRIDS AND CARDS
+=============================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+}
+
+.card {
+  grid-column: span 4;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.thumb {
+  aspect-ratio: 16/9;
+  background: 
+    linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(6, 182, 212, 0.25)),
+    linear-gradient(180deg, var(--bg-soft), var(--bg-soft));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.meta span {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ============
+BACK TO BUTTON
+=============== */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+FORM----
+============================ */
+form {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--ring);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ===========================
+FOOTER
+============================== */
+footer {
+  padding: 40px 0;
+  color: var(--muted);
+}
+
+.split {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.spacer {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 70%);
+  margin: 28px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ===========================================
+MEDIA QUERIES
+============================================== */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .cta {
+    justify-content: center;
+  }
+  
+  .grid .card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .grid .card {
+    grid-column: span 12;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .avatar svg {
+    width: 65%;
+  }
+  .heads-ha{
+    font-size: 3.5rem;
+  }
+  /* header */
+  .logoline{
+    display: none;
+  }
+  .kbtn{
+    display: none;
+  }
+  .container-nav{
+    padding: 10px 5px;
+  }
+  nav{
+    display: none;
+  }
+  nav a{
+    margin-right: 2px;
+    padding: 2px 3px;
+    border-radius: 5px;
+    background-color:#6e6d6d6e;
+    color: rgb(238, 236, 236);
+  }
+  /* ==========
+  CHECKLIST
+  ============= */
+
+  /* scroll problem solved */
+    #checkbtn {
+    display: block;
+  }
+  
+  .check-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .checks {
+    margin-top: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .checks.show {
+    height: auto;
+    padding: 20px;
+  }
+  
+  .check-item a {
+    background-color: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .check-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  /* html { scroll-padding-top: 220px; }
+section { scroll-margin-top: 220px; } */
+  /* ==============
+  MEMBERS
+  ================= */
+.members {
+  /* display: flex; */
+  gap: 1rem;
+  justify-content: flex-start;
+  overflow-x: auto; 
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;/* smooth scrolling on iOS */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;   /* optional: card snapping */
+  padding-inline: 14px;            /* breathing room at edges */
+  margin-top: 20px;
+}
+
+/* hide scrollbar cross-browser */
+.members::-webkit-scrollbar { display: none; }
+.members { -ms-overflow-style: none; scrollbar-width: none; }
+
+.member {
+  flex: 0 0 auto;
+  min-width: 220px;
+  padding: 28px;
+  border-radius: 12px;
+}
+/* Animation for menu toggle */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.checks.show {
+  animation: fadeIn 0.3s ease forwards;
+}
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-nav">
+      <a href="#">
+        <div class="logo">
+        <img src="singlogo.png" alt="" height="40px">
+        <img class="logoline" src="logoline.png" alt="" height="40px">
+      </div>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#samples">Samples</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+        <button class="kbtn" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </nav>
+        <button id="checkbtn">☰</button>
+    </div>
+  </header>
+  <!-- Phone CHECKLIST -->
+         <div class="check-container">
+        <div class="checks" id="checklist">
+          <div class="check-item">
+            <a href="#about">About</a>
+          </div>
+          <div class="check-item">
+            <a href="#services">Services</a>
+          </div>
+          <div class="check-item">
+            <a href="#samples">Samples</a>
+          </div>
+          <div class="check-item">
+            <a href="#projects">Projects</a>
+          </div>
+          <div class="check-item">
+            <a href="#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="tag">👋 Welcome<strong></strong></span>
+        <h1 class="title">Designing Creative Logos & Building Modern Webs</h1>
+        <p class="sub">ClariZen Studio is a creative design and development agency dedicated to helping brands stand out with unique and impactful visuals.</p>
+        <div class="cta">
+          <a href="#projects"><button class="btn">View Projects</button></a>
+          <a href="#contact"><button class="btn secondary">Contact Us</button></a>
+        </div>
+      </div>
+      <div class="glass">
+        <div class="avatar">
+          <div class="ring"></div>
+          <img src="logos.png" alt="" height="200px">
+        </div>
+      </div>
+    </section>
+
+<!-- ABOUT -->
+    <section id="about">
+       <h2 class="heads-h">About Us</h2>
+      
+      <h2 style="padding-top: 2rem;">Experties</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>We are Expert at:</strong>
+
+        <div class="chips" style="margin-top: 1rem;">
+        <span class="chip">LOGO Design</span>
+        <span class="chip">WEB Development</span>
+        <span class="chip">Brand Identity Design</span>
+        <span class="chip">Social Media Design</span>
+        <span class="chip">UI/UX Design</span>
+      </div>
+        </div>
+      </div>
+      <h2>Vision</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>At ClariZen Studio:</strong>
+          <div>Our mission is simple: to bring your ideas to life with creativity, innovation, and precision. Whether you’re a startup or an established business, we provide design and development services that help you grow, connect, and leave a lasting impression.</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+<!-- MEMBERS -->
+    <div class="containers">
+    <button id="mbtn">Show Members</button>
+
+    <div class="members" id="membersList">
+      <div class="member">
+        <img src="singlogo.png" alt="" height="100">
+        <hr>
+        <h1 style="display: inline;">M.Laraib</h1>
+        <br>
+        <strong>Web Developer</strong>
+      </div>
+            <div class="member">
+        <img src="singlogo.png" alt="" height="100">
+        <hr>
+        <h1 style="display: inline;">M.Zohaib</h1>
+        <br>
+        <strong>LOGO Designer</strong>
+      </div>
+            <div class="member">
+        <img src="singlogo.png" alt="" height="100">
+        <hr>
+        <h1 style="display: inline;">Kamran</h1>
+        <br>
+        <strong>Web Developer</strong>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
+<!-- Services -->
+    <section id="services">
+      <h2 class="heads-h">Services</h2>
+      <div class="chips">
+        <span class="chip">LOGO Designing</span>
+        <span class="chip">WEB Development</span>
+        <span class="chip">Social Media Support</span>
+        <span class="chip">UI / UX</span>
+        <span class="chip">Express</span>
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+
+<!-- PORTFOLIO -->
+ <!-- samples section -->
+    <section id="samples">
+      <h2 class="heads-ha">P<strong style="color: wheat;">o</strong>rtf<strong style="color: wheat;">o</strong>li<strong style="color: wheat;">o</strong></h2>
+      <h2>Samples</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>LOGO</h3></a>
+            <p class="lead">Logo description-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur</p>
+            <div class="meta">
+              <span>Node.js</span><span>Express</span><span>Crypto</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>LOGO</h3></a>
+            <p class="lead">A guided lab that simulates common Wi‑Fi weaknesses so learners can practice fixes.</p>
+            <div class="meta">
+              <span>Linux</span><span>Networking</span><span>Docs</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#" target="_blank" rel="noreferrer noopener"><h3>LOGO</h3></a>
+            <p class="lead">A coding tutorial site prototype with interactive JS lessons and quizzes.</p>
+            <div class="meta">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+<!-- projects section -->
+     <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>WEB</h3></a>
+            <p class="lead">Logo description-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur</p>
+            <div class="meta">
+              <span>Node.js</span><span>Express</span><span>Crypto</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>WEB</h3></a>
+            <p class="lead">A guided lab that simulates common Wi‑Fi weaknesses so learners can practice fixes.</p>
+            <div class="meta">
+              <span>Linux</span><span>Networking</span><span>Docs</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#" target="_blank" rel="noreferrer noopener"><h3>LOGO</h3></a>
+            <p class="lead">A coding tutorial site prototype with interactive JS lessons and quizzes.</p>
+            <div class="meta">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="heads-h">Contact</h2>
+      <p class="lead">Have a question or want to collaborate? Drop a message — We willl reply soon.</p>
+      <form id="contactForm">
+        <input required placeholder="Your name" name="name" />
+        <input required type="email" placeholder="Email address" name="email" />
+        <textarea required placeholder="Your message" name="message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+        <div class="note" id="formNote" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <div class="spacer"></div>
+    <section class="center">
+      <p class="note">© <span id="year"></span> Your Name. All rights reserved.</p>
+    </section>
+  </main>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<!-- FOOTER -->
+  <footer>
+    <div class="container split">
+      <div>🔒 Built with accessibility & performance in mind.</div>
+    </div>
+  </footer>
+
+  <script>
+        // Theme toggle (persist) — apply attribute only for light mode
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if(saved === 'light'){ root.setAttribute('data-theme', 'light'); } else { root.removeAttribute('data-theme'); }
+    themeToggle?.addEventListener('click', () => {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      if(isLight){
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+
+    // Contact form (demo only)
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      note.textContent = `Thanks ${data.name}! Your message has been captured`;
+      form.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+     // View Members toggle
+    const btn = document.getElementById("mbtn");
+    const list = document.getElementById("membersList");
+
+    btn.addEventListener("click", () => {
+      list.classList.toggle("show");
+      btn.textContent = list.classList.contains("show") 
+        ? "Hide Members" 
+        : "Show Members";
+    });
+    // Mobile menu toggle
+    const checkbtn = document.getElementById("checkbtn");
+    const checklist = document.getElementById("checklist");
+    
+    checkbtn.addEventListener("click", () => {
+      checklist.classList.toggle("show");
+      checkbtn.textContent = checklist.classList.contains("show") 
+        ? "✕" 
+        : "☰";
+    });
+
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (checklist.classList.contains('show') && 
+          !checklist.contains(e.target) && 
+          e.target !== checkbtn) {
+        checklist.classList.remove('show');
+        checkbtn.textContent = '☰';
+      }
+    });
+
+    // Close mobile menu when a link is clicked
+    const checkItems = document.querySelectorAll(".check-item a, .check-item button");
+    checkItems.forEach(item => {
+      item.addEventListener('click', () => {
+        checklist.classList.remove('show');
+        checkbtn.textContent = '☰';
+      });
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById("backToTop");
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
