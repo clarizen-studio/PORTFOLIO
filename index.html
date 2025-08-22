@@ -1,19 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Your Name</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+  <header>
+    <div class="container-nav">
+      <a href="#">
         <div class="logo">
-            <h3>ClariZen Studio</h3>
+        <img src="singlogo.png" alt="" height="40px">
+        <img class="logoline" src="logoline.png" alt="" height="40px">
+      </div>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#samples">Samples</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+        <button class="kbtn" id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
+      </nav>
+        <button id="checkbtn">☰</button>
+    </div>
+  </header>
+  <!-- Phone CHECKLIST -->
+         <div class="check-container">
+        <div class="checks" id="checklist">
+          <div class="check-item">
+            <a href="#about">About</a>
+          </div>
+          <div class="check-item">
+            <a href="#services">Services</a>
+          </div>
+          <div class="check-item">
+            <a href="#samples">Samples</a>
+          </div>
+          <div class="check-item">
+            <a href="#projects">Projects</a>
+          </div>
+          <div class="check-item">
+            <a href="#contact">Contact Us</a>
+          </div>
         </div>
-        <div class="menu">
-            <span>MENU</span>
+      </div>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="tag">👋 Welcome<strong></strong></span>
+        <h1 class="title">Designing Creative Logos & Building Modern Webs</h1>
+        <p class="sub">ClariZen Studio is a creative design and development agency dedicated to helping brands stand out with unique and impactful visuals.</p>
+        <div class="cta">
+          <a href="#projects"><button class="btn">View Projects</button></a>
+          <a href="#contact"><button class="btn secondary">Contact Us</button></a>
         </div>
-    </header>
+      </div>
+      <div class="glass">
+        <div class="avatar">
+          <div class="ring"></div>
+          <img src="logos.png" alt="" height="200px">
+        </div>
+      </div>
+    </section>
+
+<!-- ABOUT -->
+    <section id="about">
+       <h2 class="heads-h">About Us</h2>
+      
+      <h2 style="padding-top: 2rem;">Experties</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>We are Expert at:</strong>
+
+        <div class="chips" style="margin-top: 1rem;">
+        <span class="chip">Graphic Design</span>
+        <span class="chip">LOGO Design</span>
+        <span class="chip">Brand Identity Design</span>
+        <span class="chip">Packaging Design</span>
+        <span class="chip">Social Media Design</span>
+        <span class="chip">Website Development</span>
+        <span class="chip">UI/UX Design</span>
+      </div>
+        </div>
+      </div>
+      <h2>Vision</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>At ClariZen Studio:</strong>
+          <div>Our mission is simple: to bring your ideas to life with creativity, innovation, and precision. Whether you’re a startup or an established business, we provide design and development services that help you grow, connect, and leave a lasting impression.</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+<!-- Services -->
+     <section id="services">
+      <h2 class="heads-ha">Services</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb">
+            <img src="./images/forest-path.jpg" alt="">
+          </div>
+          <div class="card-body">
+            <a href="#"><h3>Graphic Design</h3></a>
+            <p class="lead">Graphic design that communicates ideas with clarity, creativity, and impact.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <!-- <img src="./images/forest-path.jpg" alt=""> -->
+          </div>
+          <div class="card-body">
+            <a href="#"><h3>LOGO Design</h3></a>
+            <p class="lead">Memorable and timeless logos that represent your brand identity.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#" target="_blank" rel="noreferrer noopener"><h3>Brand Identity Design</h3></a>
+            <p class="lead"> Complete branding solutions including business cards, flyers, posters, banners, and corporate stationery.</p>
+          </div>
+        </article>
+      </div>
+<!-- more  -->
+      <div class="more-container">
+        <button id="moreBtn">Show More</button>
+        <div class="more" id="morelist">
+          <div class="grid">
+          <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>Packaging Design</h3></a>
+            <p class="lead">Strategic packaging design that elevates brand value, ensures functionality, and creates a lasting impression.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>Social Media Design </h3></a>
+            <p class="lead">Engaging post designs, ad creatives, and digital content for all platforms.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>Website Development</h3></a>
+            <p class="lead">Professional, modern, and responsive websites tailored to your business needs.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>UI/UX Design</h3></a>
+            <p class="lead">User-friendly and aesthetic digital experiences for apps and websites.</p>
+          </div>
+        </article>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+      <!-- <div class="spacer"></div> -->
+    </section>
+
+
+<!-- PORTFOLIO -->
+ <!-- samples section -->
+    <section id="samples">
+       <h2 class="heads-ha">Portfolio</h2>
+      <h2>Samples</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>LOGO</h3></a>
+            <p class="lead">Logo description-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur</p>
+            <div class="meta">
+              <span>Node.js</span><span>Express</span><span>Crypto</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>LOGO</h3></a>
+            <p class="lead">A guided lab that simulates common Wi‑Fi weaknesses so learners can practice fixes.</p>
+            <div class="meta">
+              <span>Linux</span><span>Networking</span><span>Docs</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#" target="_blank" rel="noreferrer noopener"><h3>LOGO</h3></a>
+            <p class="lead">A coding tutorial site prototype with interactive JS lessons and quizzes.</p>
+            <div class="meta">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+<!-- projects section -->
+     <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>WEB</h3></a>
+            <p class="lead">Logo description-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur</p>
+            <div class="meta">
+              <span>Node.js</span><span>Express</span><span>Crypto</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#"><h3>WEB</h3></a>
+            <p class="lead">A guided lab that simulates common Wi‑Fi weaknesses so learners can practice fixes.</p>
+            <div class="meta">
+              <span>Linux</span><span>Networking</span><span>Docs</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <a href="#" target="_blank" rel="noreferrer noopener"><h3>LOGO</h3></a>
+            <p class="lead">A coding tutorial site prototype with interactive JS lessons and quizzes.</p>
+            <div class="meta">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="heads-h">Contact</h2>
+      <p class="lead">Have a question or want to collaborate? Drop a message — We willl reply soon.</p>
+      <form id="contactForm">
+        <input required placeholder="Your name" name="name" />
+        <input required type="email" placeholder="Email address" name="email" />
+        <textarea required placeholder="Your message" name="message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+        <div class="note" id="formNote" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <div class="spacer"></div>
+  </main>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<!-- FOOTER -->
+  <footer>
+    <div class="foot-container">
+      <div class="foot-image">
+        <img src="singlogo.png" alt="">
+      </div>
+      <div class="foot-contact">
+        <div class="foot-contact-h">
+          <h4>Contact</h4>
+        </div>
+        <div class="email">
+          <img src="https://img.icons8.com/?size=100&id=85467&format=png&color=FD7E14" alt="" height="20px">
+          <a href="#">clerizensutdio@gmail.com</a>
+        </div>
+        <div class="phoneno">
+          <img src="https://img.icons8.com/?size=100&id=53439&format=png&color=FD7E14" alt="" height="20px">
+          <p>+92 310 4584039</p>
+        </div>
+      </div>
+
+      <div class="foot-social">
+        <span>
+          <h4 style="display:inline;">Follow Us</h4>
+        </span>
+        <div class="icons-list" id="facebook">
+        <div class="s-icon">
+          <a href="https://www.facebook.com/clarizenstudio" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="" height="30px">
+          </a>
+      </div>
+      <div class="s-icon" id="instagram">
+        <a href="https://www.instagram.com/clarizen.studio/" target="_blank">
+          <img src="https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=000000" alt="" height="30px">
+        </a>
+      </div>
+      <div class="s-icon" id="facebook">
+          <a href="https://www.facebook.com/clarizenstudio" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="" height="30px">
+          </a>
+      </div>
+      <div class="s-icon" id="facebook">
+        <a href="https://www.instagram.com/clarizen.studio/" target="_blank">
+          <img src="https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=000000" alt="" height="30px">
+        </a>
+        </div>
+    </div>
+  </footer>
+  <div class="center">
+      <p class="note">© <span id="year"></span> ClariZen Studio. All rights reserved.</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
