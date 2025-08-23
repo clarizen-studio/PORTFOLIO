@@ -778,9 +778,7 @@ More Services
   /* ==============
   FOOTER
   ================= */
-  footer{
-    
-  }
+
   .foot-container{
     display: flex;
     gap: 5px;
@@ -793,9 +791,6 @@ More Services
   }
   .foot-contact{
     padding-right: 7px;
-  }
-  .email{
-    /* display: inline; */
   }
 
 }
