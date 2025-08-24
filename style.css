@@ -15,7 +15,7 @@
 
 [data-theme="light"] {
   --bg: #f7f9fc;
-  /* --bg-soft: #ffffff; */
+  --bg-soft: #ffffff;
   --card: rgba(10, 12, 20, 0.06);
   --text: #0b1220;
   --muted: #475569;
@@ -106,8 +106,10 @@ nav a:hover {
   color: var(--text);
 }
 
-/* !!!!!!!!!!!!!!!! CHECKLIST CONTAINER */
-.check-container{
+/* ==========================
+Phone Nav Menu
+============================= */
+.menu-container{
   display: none;
   position: fixed;
   top: 60px;
@@ -118,7 +120,7 @@ nav a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-#checkbtn{
+#menubtn{
   display: none;
   background: transparent;
   border: 1px solid var(--ring);
@@ -129,7 +131,7 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-#checkbtn:hover {
+#menubtn:hover {
   border-color: var(--text);
 }
 
@@ -277,10 +279,10 @@ MORE SERVICES
 =================== */
 .heads-ha{
     background: linear-gradient(135deg, var(--brand1), var(--brand2));
-  -webkit-background-clip: text; /* For Chrome, Safari */
-  -webkit-text-fill-color: transparent; /* For Chrome, Safari */
-  background-clip: text; /* For Firefox (with prefix sometimes) */
-  color: transparent; /* fallback */
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text; 
+  color: transparent;
 }
     .more-container{
       text-align: center;
@@ -341,7 +343,8 @@ GLASS CARD
   background: 
     radial-gradient(400px 200px at 30% 10%, rgba(124, 58, 237, 0.35), transparent 60%),
     radial-gradient(380px 190px at 80% 20%, rgba(6, 182, 212, 0.35), transparent 60%),
-    linear-gradient(180deg, var(--bg-soft), var(--bg-soft));
+    /* linear-gradient(180deg, var(--bg-soft), var(--bg-soft)); */
+    linear-gradient(180deg, #0f1524, #0f1524);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -632,18 +635,18 @@ FOR TABLETS LIKE SCREENS
   /* ==========
   CHECKLIST
   ============= */
-    #checkbtn {
+    #menubtn {
     display: block;
   }
   
-  .check-container {
+  .menu-container {
     display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
   
-  .checks {
+  .menu {
     margin-top: 0;
     overflow: hidden;
     height: 0;
@@ -655,12 +658,12 @@ FOR TABLETS LIKE SCREENS
     padding: 0;
   }
   
-  .checks.show {
+  .menu.show {
     height: auto;
     padding: 20px;
   }
   
-  .check-item a {
+  .menu-item a {
     background-color: var(--card);
     color: var(--text);
     text-decoration: none;
@@ -672,7 +675,7 @@ FOR TABLETS LIKE SCREENS
     transition: all 0.2s ease;
   }
   
-  .check-item a:hover {
+  .menu-item a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
@@ -715,18 +718,18 @@ FOR MOBILES PHONES
   /* ==========
   CHECKLIST
   ============= */
-    #checkbtn {
+    #menubtn {
     display: block;
   }
   
-  .check-container {
+  .menu-container {
     display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
   
-  .checks {
+  .menu {
     margin-top: 0;
     overflow: hidden;
     height: 0;
@@ -738,12 +741,12 @@ FOR MOBILES PHONES
     padding: 0;
   }
   
-  .checks.show {
+  .menu.show {
     height: auto;
     padding: 20px;
   }
   
-  .check-item a {
+  .menu-item a {
     background-color: var(--card);
     color: var(--text);
     text-decoration: none;
@@ -755,7 +758,7 @@ FOR MOBILES PHONES
     transition: all 0.2s ease;
   }
   
-  .check-item a:hover {
+  .menu-item a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
@@ -774,7 +777,18 @@ More Services
   .more.show{
     max-height:max-content;
   }
-
+/* ===================
+FORM
+==================== */
+input,
+textarea {
+  /* width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--ring); */
+  background: white;
+  /* color: black; */
+}
   /* ==============
   FOOTER
   ================= */

@@ -29,7 +29,7 @@
     form?.addEventListener('submit', (e)=>{
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
-      note.textContent = `Thanks ${data.name}! Your message has been captured`;
+      note.textContent = `Thanks ${data.name}! Your message has been captured.`;
       form.reset();
     });
 
@@ -48,12 +48,12 @@
 
 
     // Mobile menu toggle
-    const checkbtn = document.getElementById("checkbtn");
-    const checklist = document.getElementById("checklist");
+    const menubtn = document.getElementById("menubtn");
+    const menulist = document.getElementById("menulist");
     
-    checkbtn.addEventListener("click", () => {
-      checklist.classList.toggle("show");
-      checkbtn.textContent = checklist.classList.contains("show") 
+    menubtn.addEventListener("click", () => {
+      menulist.classList.toggle("show");
+      menubtn.textContent = menulist.classList.contains("show") 
         ? "✕" 
         : "☰";
     });
@@ -64,17 +64,17 @@
       if (checklist.classList.contains('show') && 
           !checklist.contains(e.target) && 
           e.target !== checkbtn) {
-        checklist.classList.remove('show');
-        checkbtn.textContent = '☰';
+        menulist.classList.remove('show');
+        menubtn.textContent = '☰';
       }
     });
 
     // Close mobile menu when a link is clicked
-    const checkItems = document.querySelectorAll(".check-item a, .check-item button");
-    checkItems.forEach(item => {
+    const menuItems = document.querySelectorAll(".menu-item a, .menu-item button");
+    menuItems.forEach(item => {
       item.addEventListener('click', () => {
-        checklist.classList.remove('show');
-        checkbtn.textContent = '☰';
+        menulist.classList.remove('show');
+        menubtn.textContent = '☰';
       });
     });
 
