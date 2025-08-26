@@ -354,11 +354,7 @@ footer {
 MEDIA QUERIES
 ============================================== */
 @media (max-width: 1000px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
+
   .cta {
     justify-content: center;
   }
@@ -398,7 +394,7 @@ FOR TABLETS LIKE SCREENS
   }
 
   /* ==========
-  CHECKLIST
+  MENUBAR
   ============= */
     #menubtn {
     display: block;
@@ -481,7 +477,7 @@ FOR MOBILES PHONES
   }
 
   /* ==========
-  CHECKLIST
+  MENUBAR
   ============= */
     #menubtn {
     display: block;
@@ -530,30 +526,6 @@ FOR MOBILES PHONES
   /* html { scroll-padding-top: 220px; }
 section { scroll-margin-top: 220px; } */
 
-
-/* ============
-More Services
-=============== */
-  .more{
-    display: flex;
-    flex-direction: column;
-    
-  }
-  .more.show{
-    max-height:max-content;
-  }
-/* ===================
-FORM
-==================== */
-input,
-textarea {
-  /* width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--ring); */
-  background: white;
-  /* color: black; */
-}
   /* ==============
   FOOTER
   ================= */
