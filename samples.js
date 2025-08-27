@@ -68,3 +68,13 @@
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+     // View Members toggle
+    const btn = document.getElementById("moreBtn");
+    const list = document.getElementById("morelist");
+
+    btn.addEventListener("click", () => {
+      list.classList.toggle("show");
+      btn.textContent = list.classList.contains("show") 
+        ? "Show Less" 
+        : "Show More Samples";
+    })
